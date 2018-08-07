@@ -1,0 +1,21 @@
+{
+  "name": "gitignore-to-dockerignore",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "LinusU/gitignore-to-dockerignore",
+  "bin": "bin.js",
+  "scripts": {
+    "test": "standard && node test"
+  },
+  "keywords": [
+    "convert",
+    "docker",
+    "dockerignore",
+    "git",
+    "gitignore",
+    "ignore"
+  ],
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
