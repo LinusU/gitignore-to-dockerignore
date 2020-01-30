@@ -30,5 +30,5 @@ console.log(gitignoreToDockerignore(input))
 
 ```sh
 # Write a .dockerignore file from .gitignore
-gitignore-to-dockerignore
+gitignore-to-dockerignore -g
 ```
