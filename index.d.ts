@@ -1,2 +1,1 @@
-declare function gitignoreToDockerignore (input: string): string
-export = gitignoreToDockerignore
+export default function gitignoreToDockerignore (input: string): string
