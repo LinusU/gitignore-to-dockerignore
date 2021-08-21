@@ -9,6 +9,6 @@ function transformLine (line) {
   return '**/' + line
 }
 
-module.exports = function gitignoreToDockerignore (input) {
+export default function gitignoreToDockerignore (input) {
   return '.git/\n' + input.split(/\r?\n/g).map(transformLine).join('\n')
 }

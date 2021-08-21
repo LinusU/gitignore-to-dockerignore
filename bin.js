@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const convert = require('./')
+import fs from 'node:fs'
+import convert from './index.js'
 
 if (process.argv.includes('--help')) {
   console.error('Usage: gitignore-to-dockerignore')

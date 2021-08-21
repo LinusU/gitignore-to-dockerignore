@@ -13,7 +13,7 @@ npm install --save gitignore-to-dockerignore
 ### API
 
 ```js
-const gitignoreToDockerignore = require('gitignore-to-dockerignore')
+import gitignoreToDockerignore from 'gitignore-to-dockerignore'
 
 const input = `
 /node_modules/
