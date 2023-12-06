@@ -1,8 +1,9 @@
 import assert from 'node:assert'
-import convert from './index.js'
+
+import { convertToDockerignore } from './index.js'
 
 function test (input, expected) {
-  assert.strictEqual(convert(input.trim()), expected.trim())
+  assert.strictEqual(convertToDockerignore(input.trim()), expected.trim())
 }
 
 /* Node.js */
