@@ -1,6 +1,8 @@
 # Gitignore → Dockerignore
 
-Generate an equivalent `.dockerignore` file from an existing `.gitignore` file.
+Generate an equivalent `.dockerignore` file from existing `.gitignore` files.
+
+New in 3.0, handles multiple `.gitignore` files in a directory and its subdirectories, just like Git does.
 
 ## Installation
 
@@ -12,15 +14,31 @@ npm install --save gitignore-to-dockerignore
 
 ### API
 
+#### Directory input
+
 ```js
-import gitignoreToDockerignore from 'gitignore-to-dockerignore'
+import generateDockerignore from 'gitignore-to-dockerignore'
+
+console.log(await generateDockerignore(process.cwd()))
+// .git/
+// node_modules/
+// **/*.log
+//
+// # From tests/.gitignore
+// tests/**/*.log
+```
+
+#### String input
+
+```js
+import { convertToDockerignore } from 'gitignore-to-dockerignore'
 
 const input = `
 /node_modules/
 *.log
 `
 
-console.log(gitignoreToDockerignore(input))
+console.log(convertToDockerignore(input))
 // .git/
 // node_modules/
 // **/*.log
@@ -29,6 +47,6 @@ console.log(gitignoreToDockerignore(input))
 ### CLI
 
 ```sh
-# Write a .dockerignore file from .gitignore
+# Write a single .dockerignore file from .gitignore files in the current directory and subdirectories
 gitignore-to-dockerignore
 ```
