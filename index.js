@@ -1,10 +1,7 @@
 import walk from 'ignore-walk'
 
 import { basename, dirname, join } from 'node:path'
-import { promisify } from 'node:util'
 import { readFile } from 'node:fs/promises'
-
-const walkAsync = promisify(walk)
 
 function transformLine (line) {
   if (line.trim() === '') return ''
@@ -22,7 +19,7 @@ export function convertToDockerignore (input) {
 }
 
 export default async function generateDockerignore (directory) {
-  const allFiles = await walkAsync({ path: directory, ignoreFiles: ['.gitignore'] })
+  const allFiles = await walk({ path: directory, ignoreFiles: ['.gitignore'] })
   const ignoreFiles = allFiles.filter(file => basename(file) === '.gitignore')
 
   let result = '.git/\n'
